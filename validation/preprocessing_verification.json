@@ -1,0 +1,288 @@
+{
+  "upstream_commit": "a7edfe5d75596f72f6b060d7ff19d4e6324376e4",
+  "date": "2026-11-25",
+  "checks": [
+    "Original file identity and manual reference lookup",
+    "Native compact support bytes and source-indexed residual membership against the separate benchmark",
+    "Independent radius counts, plane RMS replay and nearest wall corner source coordinates",
+    "Opening dimensions, shallow endpoints and recessed depth-profile source rows against the benchmark",
+    "Word method, retained count and both window-width columns; HTML and Word download for M04 radius"
+  ],
+  "benchmark_numeric_tolerance_mm": 1e-07,
+  "cases": [
+    {
+      "room": "M26",
+      "source_sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "preprocessing": {
+        "api_version": 1,
+        "method": "raw",
+        "parameters": {},
+        "input_rows": 793393,
+        "finite_rows": 793393,
+        "retained_rows": 793393,
+        "removed_finite_rows": 0,
+        "coordinates": "original_xyz",
+        "source_rows_file": null,
+        "source_rows_sha256": "5c51060d63a46bbd1642553b8547d277e33186b148967177207e686afec71148"
+      },
+      "room_dimensions_mm": {
+        "length": 3652.036467312516,
+        "width": 2885.2846562945424,
+        "height": 2772.4385028044653
+      },
+      "openings": [
+        {
+          "id": "W01-01",
+          "type": "window",
+          "width_at_height_m": 1.280030639031542,
+          "width_mm": 2443.843294229278,
+          "height_mm": 1737.2498961008303
+        },
+        {
+          "id": "W02-01",
+          "type": "door",
+          "width_at_height_m": 1.0,
+          "width_mm": 898.949466086114,
+          "height_mm": 2191.6084702874273
+        }
+      ],
+      "windows": [
+        {
+          "id": "W01-01",
+          "height_m": 1.280030639031542,
+          "face_depth_mm": 0,
+          "face_width_mm": 2443.843294229278,
+          "deep_status": "candidate",
+          "deep_depth_range_mm": [
+            655,
+            675
+          ],
+          "deep_width_mm": 2378.35
+        }
+      ],
+      "walls": [
+        {
+          "wall": "W01",
+          "status": "ok",
+          "rms_mm": 2.413860478526333,
+          "selected_rows": 48915
+        },
+        {
+          "wall": "W02",
+          "status": "ok",
+          "rms_mm": 1.2348695860019248,
+          "selected_rows": 110723
+        },
+        {
+          "wall": "W03",
+          "status": "warning",
+          "rms_mm": 1.1420363966559348,
+          "selected_rows": 136037
+        },
+        {
+          "wall": "W04",
+          "status": "ok",
+          "rms_mm": 1.0814776959071426,
+          "selected_rows": 106049
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "source_sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "preprocessing": {
+        "api_version": 1,
+        "method": "radius",
+        "parameters": {
+          "radius_mm": 20,
+          "min_other_points": 4
+        },
+        "input_rows": 793393,
+        "finite_rows": 793393,
+        "retained_rows": 793065,
+        "removed_finite_rows": 328,
+        "coordinates": "original_xyz",
+        "source_rows_file": "detector_source_rows.npz",
+        "source_rows_sha256": "ec826cdad80a54c5f13903807f059a3adb153b3f2cda1aa3e31834c313861df1"
+      },
+      "room_dimensions_mm": {
+        "length": 3651.958139368121,
+        "width": 2885.2887231649715,
+        "height": 2772.4340197576716
+      },
+      "openings": [
+        {
+          "id": "W01-01",
+          "type": "window",
+          "width_at_height_m": 1.2800433056696279,
+          "width_mm": 2443.8456336353415,
+          "height_mm": 1737.2498930780775
+        },
+        {
+          "id": "W02-01",
+          "type": "door",
+          "width_at_height_m": 1.0,
+          "width_mm": 898.9494898819535,
+          "height_mm": 2191.6084778546237
+        }
+      ],
+      "windows": [
+        {
+          "id": "W01-01",
+          "height_m": 1.2800433056696279,
+          "face_depth_mm": 0,
+          "face_width_mm": 2443.8456336353415,
+          "deep_status": "candidate",
+          "deep_depth_range_mm": [
+            655,
+            675
+          ],
+          "deep_width_mm": 2378.35
+        }
+      ],
+      "walls": [
+        {
+          "wall": "W01",
+          "status": "ok",
+          "rms_mm": 2.431377138669865,
+          "selected_rows": 48947
+        },
+        {
+          "wall": "W02",
+          "status": "ok",
+          "rms_mm": 1.2358677888919702,
+          "selected_rows": 110725
+        },
+        {
+          "wall": "W03",
+          "status": "warning",
+          "rms_mm": 1.1420363966559348,
+          "selected_rows": 136037
+        },
+        {
+          "wall": "W04",
+          "status": "ok",
+          "rms_mm": 1.0811455154389922,
+          "selected_rows": 106050
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "source_sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "preprocessing": {
+        "api_version": 1,
+        "method": "raw",
+        "parameters": {},
+        "input_rows": 510190,
+        "finite_rows": 510190,
+        "retained_rows": 510190,
+        "removed_finite_rows": 0,
+        "coordinates": "original_xyz",
+        "source_rows_file": null,
+        "source_rows_sha256": "9313c16d462eb36d149360ea11d51454355440fa3f74987532f412d75f8955e2"
+      },
+      "room_dimensions_mm": {
+        "length": 3053.9925661091665,
+        "width": 2080.76644267156,
+        "height": 3087.7422409848855
+      },
+      "openings": [
+        {
+          "id": "W02-01",
+          "type": "door",
+          "width_at_height_m": 1.0,
+          "width_mm": 920.2269372057808,
+          "height_mm": 2340.947284372319
+        }
+      ],
+      "windows": [],
+      "walls": [
+        {
+          "wall": "W01",
+          "status": "warning",
+          "rms_mm": 1.351415697825274,
+          "selected_rows": 113162
+        },
+        {
+          "wall": "W02",
+          "status": "warning",
+          "rms_mm": 1.3246423669622183,
+          "selected_rows": 37423
+        },
+        {
+          "wall": "W03",
+          "status": "ok",
+          "rms_mm": 1.1105114123676154,
+          "selected_rows": 42138
+        },
+        {
+          "wall": "W04",
+          "status": "warning",
+          "rms_mm": 1.4138054226069932,
+          "selected_rows": 114837
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "source_sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "preprocessing": {
+        "api_version": 1,
+        "method": "radius",
+        "parameters": {
+          "radius_mm": 20,
+          "min_other_points": 4
+        },
+        "input_rows": 510190,
+        "finite_rows": 510190,
+        "retained_rows": 509707,
+        "removed_finite_rows": 483,
+        "coordinates": "original_xyz",
+        "source_rows_file": "detector_source_rows.npz",
+        "source_rows_sha256": "59d3061ce7ee9a71c5db76151dc51d7b8933c489b440158f11a8c6c292e4e315"
+      },
+      "room_dimensions_mm": {
+        "length": 3053.9938398637955,
+        "width": 2080.76612008957,
+        "height": 3087.7446736449983
+      },
+      "openings": [
+        {
+          "id": "W02-01",
+          "type": "door",
+          "width_at_height_m": 1.0,
+          "width_mm": 920.2269336782099,
+          "height_mm": 2340.947320658774
+        }
+      ],
+      "windows": [],
+      "walls": [
+        {
+          "wall": "W01",
+          "status": "warning",
+          "rms_mm": 1.3519213142782547,
+          "selected_rows": 113166
+        },
+        {
+          "wall": "W02",
+          "status": "warning",
+          "rms_mm": 1.3246423669622183,
+          "selected_rows": 37423
+        },
+        {
+          "wall": "W03",
+          "status": "ok",
+          "rms_mm": 1.1124421153003943,
+          "selected_rows": 42141
+        },
+        {
+          "wall": "W04",
+          "status": "warning",
+          "rms_mm": 1.4138054226069932,
+          "selected_rows": 114837
+        }
+      ]
+    }
+  ]
+}

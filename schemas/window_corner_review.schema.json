@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Optional window corner cross-check in the saved inspection summary",
+  "type": "object",
+  "required": ["version", "method", "preprocessing", "source_rows_sha256", "protocol_sha256", "source_sha256", "windows"],
+  "properties": {
+    "version": {"const": 1},
+    "method": {"const": "profile_reveal"},
+    "preprocessing": {"enum": ["raw", "radius"]},
+    "source_rows_sha256": {"$ref": "#/$defs/sha"},
+    "protocol_sha256": {"$ref": "#/$defs/sha"},
+    "source_sha256": {"$ref": "#/$defs/sha"},
+    "windows": {"type": "array", "items": {"$ref": "#/$defs/window"}}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fourCorners": {
+      "description": "Fitted A, B, C, D in original scanner XYZ metres. A is lower left in wall elevation.",
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number"}}
+    },
+    "edges": {
+      "description": "Ordered left, right, bottom, top. Each source row identifies one eligible original scan record.",
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {"type": "object", "properties": {
+        "source_rows": {"type": "array", "items": {"type": "integer", "minimum": 0}},
+        "strips": {"type": "integer", "minimum": 0},
+        "edge": {"enum": ["left", "right", "bottom", "top"]},
+        "status": {"enum": ["retained_profile_edge", "reveal_plane"]}
+      }}
+    },
+    "face": {
+      "type": "object",
+      "required": ["depth_mm", "width_level_m", "height_level_u_m", "width_mm", "height_mm", "supported_sides", "corners_xyz_m", "edge_evidence", "status"],
+      "properties": {
+        "depth_mm": {"const": 0}, "width_level_m": {"type": "number"}, "height_level_u_m": {"type": "number"},
+        "width_mm": {"type": "number", "exclusiveMinimum": 0}, "height_mm": {"type": "number", "exclusiveMinimum": 0},
+        "supported_sides": {"type": "integer", "minimum": 0, "maximum": 4},
+        "corners_xyz_m": {"$ref": "#/$defs/fourCorners"}, "edge_evidence": {"$ref": "#/$defs/edges"},
+        "status": {"enum": ["reveal_supported", "mixed", "profile_only"]}
+      }
+    },
+    "deep": {
+      "type": "object",
+      "required": ["status", "width_mm", "height_mm", "corners_xyz_m", "slice_mm", "width_level_m", "height_level_u_m"],
+      "properties": {
+        "status": {"enum": ["no_supported_width_layer", "insufficient_four_edge_support", "candidate"]},
+        "width_level_m": {"type": "number"}, "height_level_u_m": {"type": "number"},
+        "slice_mm": {"type": ["number", "null"]}, "edge_evidence": {"$ref": "#/$defs/edges"}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "candidate"}}},
+         "then": {"required": ["edge_evidence"], "properties": {"slice_mm": {"type": "number"}, "width_mm": {"type": "number", "exclusiveMinimum": 0}, "height_mm": {"type": "number", "exclusiveMinimum": 0}, "corners_xyz_m": {"$ref": "#/$defs/fourCorners"}}},
+         "else": {"properties": {"width_mm": {"type": "null"}, "height_mm": {"type": "null"}, "corners_xyz_m": {"type": "null"}}}},
+        {"if": {"properties": {"status": {"const": "no_supported_width_layer"}}},
+         "then": {"properties": {"slice_mm": {"type": "null"}}},
+         "else": {"required": ["edge_evidence"], "properties": {"slice_mm": {"type": "number"}}}}
+      ]
+    },
+    "window": {
+      "type": "object", "required": ["opening_id", "wall_id", "status"],
+      "properties": {"opening_id": {"type": "string"}, "wall_id": {"type": "string"},
+        "status": {"enum": ["evaluated", "missing_wall_boundary"]}, "face": {"$ref": "#/$defs/face"}, "deep": {"$ref": "#/$defs/deep"}},
+      "if": {"properties": {"status": {"const": "evaluated"}}},
+      "then": {"required": ["face", "deep"]}
+    }
+  }
+}

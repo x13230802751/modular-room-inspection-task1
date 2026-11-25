@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "repository": "https://github.com/x13230802751/room-inspection-integrated",
+  "commit": "a7edfe5d75596f72f6b060d7ff19d4e6324376e4",
+  "input_unit": "m",
+  "up": [0, 0, 1],
+  "methods": {
+    "raw": "Unfiltered",
+    "radius": "Binary radius mask",
+    "sor": "Statistical mask",
+    "gaussian": "Gaussian smoothing",
+    "bilateral": "Bilateral smoothing",
+    "sor_bilateral": "Statistical mask + bilateral"
+  },
+  "parameters": {
+    "radius_mm": 20.0, "min_other_points": 4,
+    "sor_other_points": 16, "sor_sigma": 2.0,
+    "smoothing_other_points": 24, "support_radius_mm": 25.0,
+    "spatial_sigma_mm": 12.0, "normal_sigma_mm": 2.0,
+    "min_smoothing_neighbours": 5, "passes": 1
+  },
+  "matching": {"max_wall_angle_deg": 10.0, "max_plane_offset_mm": 120.0, "max_opening_center_offset_m": 0.35},
+  "decision": "Compare equal physical features, retain missing outcomes and inspect original-coordinate RMS before proposing a default. Integration requires owner review."
+}

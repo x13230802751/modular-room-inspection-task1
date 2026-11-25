@@ -1,0 +1,16 @@
+# Instructions for the next maintainer
+
+Start in the extracted repository root. Read [the project handoff](TASK1_HANDOFF.md), [the machine handshake](HANDSHAKE.json), [the interface](INTERFACE_SPEC.md) and [the report/RMS adapter](REPORT_API.md). Identify M26 and M04 by their SHA-256 values in the [manual registry](references/manual_reference.json).
+
+Follow the [integrated workflow](docs/INTEGRATED_WORKFLOW.md) for the four upstream geometry interfaces, the independent radius branch, report dispatch and offline scoring. The handoff archive provides saved run directories for replay at `runs/M26` and `runs/M04`.
+
+1. Run `python inspect_room.py SCAN --out NEW_RUN` or upload one scan using the default local page. Record the input unit, up direction, source SHA-256, both point-selection digests and the official RMS provider. Use `--preprocess raw` or `--preprocess radius` when an experiment requires a single primary treatment.
+2. Read official dimensions, openings, wall corners and RMS from `summary.json` and `window_sections.json`. Read Group 09 independently from the descriptor and `group09/result.json`. Resolve the recorded pairs in original coordinates before comparing IDs. The radius rule keeps points with at least four other records within 20 mm. Review side-level support and distinguish fitted intersections from observed endpoints.
+3. Report wall-face aperture and recessed frame candidate side by side. Give floor-relative elevation, positive-into-opening depth, five-slice median and status. Label the separate four-line fit at its single depth. M26 has one tape window width at an unknown contact depth and no surveyed corner coordinates. M04 has no reference window. The field RMS footprints have unknown corners.
+4. Verify the [two-room release](validation/group09_verification.json). Independently audit source rows and wall residuals with `python tests/check_native_support.py SCAN RUN`. Compare paired results with single-treatment controls using `python tests/check_group09.py SCAN PAIRED RAW_CONTROL RADIUS_CONTROL`. Render the same saved measurements via `python reporting.py RUN --out NEW_COPY`.
+5. For a score interpretation, read [the original calculation and input mapping](docs/GROUP09_SCORING.md) and [the nominal trace](validation/group09_nominal_score_trace.json). Run `python experiments/joint_benchmark/verify_scores.py --combination 9 --mode nominal --json` for every input and pass flag. Remove the options to recalculate all 210 scores in [the 70-row table](experiments/joint_benchmark/Combination_Scorecard.csv). The historical score belongs to the method comparison. A new scan needs independent references to support an accuracy claim.
+6. Use a profile RMS callable for a replacement algorithm and a report callable for new formatting. Keep both branch identities and unsupported results visible. The P2P-Bridge and ScaleLSD routes remain reproducible experiments as described in their respective directories.
+
+## Presentation and workflow
+
+Read `docs/INTEGRATED_WORKFLOW.md` for the three dependencies of whole-wall RMS and the missing-boundary route. In `docs/Task1_Inspection_Presentation.pptx`, slide 6 compares all 70 nominal scores and slide 7 illustrates the Group 09 radius and reveal-plane method. Verify numeric changes against the released scorecard and the saved paired inspections.

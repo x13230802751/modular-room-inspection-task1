@@ -1,0 +1,43 @@
+{
+  "room": "M26",
+  "wall": "W02",
+  "opening": "W02-01",
+  "width_height_m": 1,
+  "point_type": "Fitted left and right jambs at 1 m above the respective fitted floor",
+  "axis_definition": "Original W02 inward wall normal crossed with the original upward floor normal, normalized",
+  "original_horizontal_unit_axis": [
+    0.8605943342210629,
+    -0.5092879861511678,
+    0.0017717417118700896
+  ],
+  "raw_fitted_jambs_xyz_m": [
+    [
+      0.13170630346150233,
+      -1.7539683467764748,
+      -12.466653479960165
+    ],
+    [
+      0.9053371207262616,
+      -2.2117925100111395,
+      -12.465060773694237
+    ]
+  ],
+  "p2p_fitted_jambs_xyz_m": [
+    [
+      0.12123600431052589,
+      -1.74891204693673,
+      -12.46946681865428
+    ],
+    [
+      0.9168017095329044,
+      -2.219770305173096,
+      -12.468755658050815
+    ]
+  ],
+  "signed_jamb_changes_on_original_axis_mm": [
+    -11.590777399203994,
+    13.922809022395347
+  ],
+  "raw_summary_sha256": "38b679765962e60f15f5b827613545e1fe78b25fab82a3ae5ef599446a4057fe",
+  "p2p_summary_sha256": "cf4c807d6b41071cd60c80810a92cbcc16a13d36e6a5c058064ee1798a21bb96"
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-25",
+  "repository": "https://github.com/x13230802751/room-inspection-integrated",
+  "commit": "a7edfe5d75596f72f6b060d7ff19d4e6324376e4",
+  "model_repository": "https://github.com/matvogel/P2P-Bridge",
+  "model_commit": "eb26f07326134839bdc32370cb40fee941d183c9",
+  "official_weight_folder": "https://drive.google.com/drive/folders/1jRmBHZssY1zwnqLIlDd7kXJNm2bDA4CN",
+  "checkpoint": "PVDL_SNPP_XYZ/step_100000.pth",
+  "checkpoint_sha256": "d8aceb0fbc871f4781c5948ef01a917ac1b3b50c46f81d2aaa31a8014424449d",
+  "config_sha256": "96fbb99fccdd108e1265f3c5af216fdda8d27aa7f8f836f010fed0c70f782a6e",
+  "p2p_inference": {"weights":"EMA", "inputs":"XYZ in metres", "patch_rows":4096, "patch_radius_m":0.30, "steps":5, "seed":42, "overlap_factor":4, "aggregation":"per-original-row mean, supplemental coverage of missed rows, no spatial donor substitution"},
+  "methods": {"raw":"Original","radius":"Radius mask","sor":"Statistical mask","gaussian":"Gaussian","bilateral":"Bilateral","sor_bilateral":"Statistical + bilateral","cylinder12":"Cylinder 12 mm","cylinder20":"Cylinder 20 mm","radius_cylinder12":"Radius + cylinder 12","p2p":"P2P-Bridge"},
+  "source_studies": {"raw":"cylindrical","radius":"cylindrical","sor":"classical","gaussian":"classical","bilateral":"cylindrical","sor_bilateral":"classical","cylinder12":"cylindrical","cylinder20":"cylindrical","radius_cylinder12":"cylindrical","p2p":"p2p"},
+  "matching": {"max_wall_angle_deg":10.0, "max_plane_offset_mm":120.0, "max_opening_center_offset_m":0.35},
+  "integration_status": "owner_review_pending"
+}

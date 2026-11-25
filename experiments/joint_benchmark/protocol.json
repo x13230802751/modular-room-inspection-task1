@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "filters": ["raw","radius","sor","gaussian","bilateral","sor_bilateral","cylinder12","cylinder20","radius_cylinder12","p2p"],
+  "recognizers": ["profile","profile_reveal","profile_xyz","layer_grid","layer_xyz","profile_scalelsd","layer_scalelsd"],
+  "rooms": ["M26","M04"],
+  "positive_seeds": [613,733,829,947],
+  "positive_conditions": ["clean","skew","partial","clutter","flush","taper"],
+  "negative_seeds": [613,829],
+  "negative_conditions": ["solid","blind_patch"],
+  "association": "One-to-one same-wall face-box IoU >= 0.50, registered to the raw scan. Course window reference box is a frozen production location proxy. Synthetic truth is independent of recognition.",
+  "field_mask_policy": "Doors use the common profile for each filter. In this benchmark, all selected window polygons replace the primary windows for RMS masking, including empty predictions. The deployed reveal option retains the primary polygon and primary numeric outputs, and reports a separate cross-check.",
+  "sensitivity": {
+    "strict": {"room_mm":5,"opening_mm":5,"corner_mm":5,"panel_mm":0.25},
+    "nominal": {"room_mm":10,"opening_mm":10,"corner_mm":10,"panel_mm":0.50},
+    "relaxed": {"room_mm":20,"opening_mm":20,"corner_mm":20,"panel_mm":1.0}
+  },
+  "overall": "100 times the equally weighted mean of (a) six in-tolerance room dimensions / 6, (b) in-tolerance observed door width/height and window height / (5 + 2*extra doors + extra windows), (c) 2*matched simulated windows with all four corner errors within tolerance / (true + predicted simulated windows), and (d) measured field wall coverage out of 8 times a known-panel RMS bias pass. Missing predictions earn no pass. The tape width at unknown depth and RMS at unknown field ROI are contextual only.",
+  "timing": "Historical full primary run plus preprocessing and current face-proposal/edge stage are reported individually. Single-machine, single-run stage timings are descriptive."
+}

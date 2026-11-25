@@ -1,0 +1,13 @@
+{
+  "room": "M04",
+  "point_indices": [170063, 340126],
+  "patch_points": 4096,
+  "patches": 2,
+  "ema_wrapper_keys": 808,
+  "author_function": "denoise_room.py:denoise_patch_batch",
+  "inference_mode": "evaluation on both EMA paths",
+  "max_vector_difference_mm": 0.033923343525432526,
+  "mean_vector_difference_mm": 0.002716961750013723,
+  "tolerance_mm": 0.02,
+  "passed": false
+}

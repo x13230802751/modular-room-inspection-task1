@@ -1,0 +1,127 @@
+{
+  "release": "2026-11-25.3",
+  "default_workflow": "official raw measurements plus independent Group 09 review",
+  "benchmark": {
+    "combinations_reconstructed": 70,
+    "scores_reconstructed": 210,
+    "nominal_components": [
+      25,
+      15,
+      21,
+      25
+    ],
+    "group09_scores": {
+      "strict": 80.83333333333333,
+      "nominal": 86.0,
+      "relaxed": 91.0
+    }
+  },
+  "runs": {
+    "M26": {
+      "source_sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "raw_rows": 793393,
+      "radius_rows": 793065,
+      "raw_walls": 4,
+      "pairs": [
+        {
+          "raw_id": "W01-01",
+          "review_id": "W01-01",
+          "status": "matched",
+          "iou": 0.9999987494005429,
+          "center_gap_mm": 0.04350332072979272
+        }
+      ],
+      "radius_windows": 1,
+      "status": "complete",
+      "official_geometry_equals_raw_control": true,
+      "wall_rows_and_residuals_equal_raw_control": true,
+      "independent_radius_proposals_equal_radius_control": true,
+      "fits_and_source_rows_verified": true,
+      "paired_tables_verified_in_word_and_html": true,
+      "entry": "Single local HTTP upload, mode=paired",
+      "rendered_from_saved_bundle": true,
+      "independent_native_membership_and_rms_refit": true,
+      "sample_word_sha256": "52da2cb939dd61377b522744ac5fe554dc23d0b05cdc368572ce22b88b511c10",
+      "group09_result_sha256": "e521a18a77ab116bcfcfe9b7ba2accb82f6fed3db1fc224dc5f3ac44e75945a1",
+      "source_row_map_sha256": "ec826cdad80a54c5f13903807f059a3adb153b3f2cda1aa3e31834c313861df1",
+      "raw_rms_mm": {
+        "W01": 2.413860478526333,
+        "W02": 1.2348695860019248,
+        "W03": 1.1420363966559348,
+        "W04": 1.0814776959071426
+      },
+      "openings": [
+        {
+          "id": "W01-01",
+          "kind": "window",
+          "width_mm": 2443.843294229278,
+          "height_mm": 1737.2498961008303
+        },
+        {
+          "id": "W02-01",
+          "kind": "door",
+          "width_mm": 898.949466086114,
+          "height_mm": 2191.6084702874273
+        }
+      ],
+      "window": {
+        "raw_face_mm": 2443.843294229278,
+        "raw_five_slice_recess_mm": 2378.35,
+        "group09_face_mm": 2445.3785049251564,
+        "group09_face_height_mm": 1738.5502382552572,
+        "group09_recess_mm": 2378.35,
+        "group09_recess_band_mm": [
+          655,
+          675
+        ],
+        "group09_single_slice_mm": 665,
+        "group09_single_slice_width_mm": 2376.698283391611,
+        "group09_supported_face_sides": 4,
+        "benchmark_agreement_mm": 1e-05
+      }
+    },
+    "M04": {
+      "source_sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "raw_rows": 510190,
+      "radius_rows": 509707,
+      "raw_walls": 4,
+      "pairs": [],
+      "radius_windows": 0,
+      "status": "complete",
+      "official_geometry_equals_raw_control": true,
+      "wall_rows_and_residuals_equal_raw_control": true,
+      "independent_radius_proposals_equal_radius_control": true,
+      "fits_and_source_rows_verified": true,
+      "paired_tables_verified_in_word_and_html": true,
+      "entry": "Default CLI without mode flags",
+      "rendered_from_saved_bundle": true,
+      "independent_native_membership_and_rms_refit": true,
+      "sample_word_sha256": "8cfc67dcedb68684d4675560c918e88a61ccce94d1709f54a1f1e7d28fb54831",
+      "group09_result_sha256": "562100350823632daba86b3bd624138d8f533b79038ccc7ee09f828aa1696e3f",
+      "source_row_map_sha256": "59d3061ce7ee9a71c5db76151dc51d7b8933c489b440158f11a8c6c292e4e315",
+      "raw_rms_mm": {
+        "W01": 1.351415697825274,
+        "W02": 1.3246423669622183,
+        "W03": 1.1105114123676154,
+        "W04": 1.4138054226069932
+      },
+      "openings": [
+        {
+          "id": "W02-01",
+          "kind": "door",
+          "width_mm": 920.2269372057808,
+          "height_mm": 2340.947284372319
+        }
+      ]
+    }
+  },
+  "sparse_demo": {
+    "input": "Packaged rotated synthetic CSV, source units mm, +Y up",
+    "raw_finite_rows": 164750,
+    "radius_retained_rows": 10228,
+    "official_face_mm": 1500.0000013064455,
+    "official_recess_mm": 1440.0,
+    "secondary_status": "unavailable",
+    "reason": "No reliable floor detected by Efficient RANSAC"
+  }
+}

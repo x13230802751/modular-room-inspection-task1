@@ -1,0 +1,745 @@
+{
+  "auditor": "tests/check_native_support.py:audit",
+  "cases": [
+    {
+      "room": "M26",
+      "method": "raw",
+      "result": "passed",
+      "source": "M26.pcd",
+      "sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.413860478526333,
+          "whole_status": "ok",
+          "n_support": 48915
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2348695860019248,
+          "whole_status": "ok",
+          "n_support": 125467
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1420363966559348,
+          "whole_status": "warning",
+          "n_support": 136039
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.0814776959071426,
+          "whole_status": "ok",
+          "n_support": 106065
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "radius",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "2d4e55535067f0c6f07f308bc037f24ff1d62b0f59c07945112321911eb985f8",
+      "exact_native_membership": true,
+      "n_input": 793065,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.431377138669865,
+          "whole_status": "ok",
+          "n_support": 48947
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2358677888919702,
+          "whole_status": "ok",
+          "n_support": 125469
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1420363966559348,
+          "whole_status": "warning",
+          "n_support": 136039
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.0811455154389922,
+          "whole_status": "ok",
+          "n_support": 106066
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "sor",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "05528d7b414ef30e8ec930a24577f5a919ec653bf1e47510ec7f48f062f51cf9",
+      "exact_native_membership": true,
+      "n_input": 791131,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.4303281976623876,
+          "whole_status": "ok",
+          "n_support": 48945
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2348523460880219,
+          "whole_status": "ok",
+          "n_support": 125475
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1420463598672503,
+          "whole_status": "warning",
+          "n_support": 136037
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.0810194299013556,
+          "whole_status": "ok",
+          "n_support": 106064
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "gaussian",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "9f74608138b6af1e0d0faf51f300d2335a823840c18f26278a06191519f170ab",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.642229397353662,
+          "whole_status": "ok",
+          "n_support": 49049
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2940625432183155,
+          "whole_status": "ok",
+          "n_support": 125470
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1669308206938847,
+          "whole_status": "warning",
+          "n_support": 136359
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.8724861912724362,
+          "whole_status": "ok",
+          "n_support": 105609
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "bilateral",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "315f913bcf0864f1f2770451050cbb5094612d5d8f3545de266b3fe8fa561acd",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.3768151743000923,
+          "whole_status": "ok",
+          "n_support": 48958
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.074038198761898,
+          "whole_status": "ok",
+          "n_support": 125492
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 0.9856542761427898,
+          "whole_status": "warning",
+          "n_support": 136108
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.8901499498922081,
+          "whole_status": "ok",
+          "n_support": 106008
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "sor_bilateral",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "0673733028ae1c74eb614febd4e87b0aa68e41579ca3bdda5579924109b43415",
+      "exact_native_membership": true,
+      "n_input": 791131,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.3772558146900793,
+          "whole_status": "ok",
+          "n_support": 48959
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.0927257224401228,
+          "whole_status": "ok",
+          "n_support": 125529
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 0.9856610440154385,
+          "whole_status": "warning",
+          "n_support": 136106
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.8895908493284795,
+          "whole_status": "ok",
+          "n_support": 106007
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "cylinder12",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "417233cc8a5aa70a32f41bb828d49aaefb927860168753b32a7df4765e20e00c",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.4705812386525614,
+          "whole_status": "ok",
+          "n_support": 48924
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.216744912410723,
+          "whole_status": "ok",
+          "n_support": 125683
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0917769660472765,
+          "whole_status": "warning",
+          "n_support": 136277
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.9124399139405254,
+          "whole_status": "ok",
+          "n_support": 105868
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "cylinder20",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "55802ce45e0a4aa1aa6fb060a058768af1e9d5bc8fb0e2faf1400a005c87a4cd",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.674319917020688,
+          "whole_status": "ok",
+          "n_support": 49194
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.3014294874401344,
+          "whole_status": "ok",
+          "n_support": 125717
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.2083956731785386,
+          "whole_status": "warning",
+          "n_support": 136647
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.8808192701340276,
+          "whole_status": "ok",
+          "n_support": 105641
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "radius_cylinder12",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "5c5a762f4080efb27e6f75f405a88f1142f75143e9b8395ede18a16c14bc01d4",
+      "exact_native_membership": true,
+      "n_input": 793065,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.4716788182746874,
+          "whole_status": "ok",
+          "n_support": 48926
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.21294403632529,
+          "whole_status": "ok",
+          "n_support": 125676
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.093207647983319,
+          "whole_status": "warning",
+          "n_support": 136281
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 0.9120441545695945,
+          "whole_status": "ok",
+          "n_support": 105869
+        }
+      ]
+    },
+    {
+      "room": "M26",
+      "method": "p2p",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "3df2f24f1050e85f7db7940e4c4530d3351b190ac336dd47346a75d6111fc469",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 4.653517529188937,
+          "whole_status": "ok",
+          "n_support": 51254
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.9338030553309964,
+          "whole_status": "warning",
+          "n_support": 125903
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 2.948249062630474,
+          "whole_status": "ok",
+          "n_support": 137718
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 3.198905506284994,
+          "whole_status": "ok",
+          "n_support": 105831
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "raw",
+      "result": "passed",
+      "source": "M04.pcd",
+      "sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.351415697825274,
+          "whole_status": "warning",
+          "n_support": 113162
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.3246423669622183,
+          "whole_status": "warning",
+          "n_support": 37424
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1105114123676154,
+          "whole_status": "ok",
+          "n_support": 42138
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.4138054226069932,
+          "whole_status": "warning",
+          "n_support": 114837
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "radius",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "19583dcfdaa5e35a4533ef8c20c9ff0e77ddb2babe4f64cc0374f5ff592daef4",
+      "exact_native_membership": true,
+      "n_input": 509707,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.3519213142782547,
+          "whole_status": "warning",
+          "n_support": 113166
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.3246423669622183,
+          "whole_status": "warning",
+          "n_support": 37424
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1124421153003943,
+          "whole_status": "ok",
+          "n_support": 42141
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.4138054226069932,
+          "whole_status": "warning",
+          "n_support": 114837
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "sor",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "86e6d9189dcb8ab324516da7819b8ca82883b962cd7a40e9c84a77784ab7389a",
+      "exact_native_membership": true,
+      "n_input": 508110,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.3534980030519552,
+          "whole_status": "warning",
+          "n_support": 113152
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.324660002227961,
+          "whole_status": "warning",
+          "n_support": 37423
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1237738163307536,
+          "whole_status": "ok",
+          "n_support": 42170
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.4138054226069932,
+          "whole_status": "warning",
+          "n_support": 114837
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "gaussian",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "3910397ba6572f153c59a36ba4a4c47a59109ef4ce4aa83a348dd84789c7a834",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.3213846652658476,
+          "whole_status": "warning",
+          "n_support": 112669
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.222425534781605,
+          "whole_status": "warning",
+          "n_support": 36668
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0566734546411871,
+          "whole_status": "ok",
+          "n_support": 41433
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3602090739994428,
+          "whole_status": "warning",
+          "n_support": 114260
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "bilateral",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "bfc6641dbfa6841a5c24e1585430ad59a40a453f63d51e7ed2f483c2abee3d03",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.2921069954071749,
+          "whole_status": "warning",
+          "n_support": 113141
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2489309725356612,
+          "whole_status": "warning",
+          "n_support": 37363
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0350837804978286,
+          "whole_status": "ok",
+          "n_support": 42071
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3560370334713763,
+          "whole_status": "warning",
+          "n_support": 114756
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "sor_bilateral",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "46cd2afa2b4058851e421a0cbd26910173883f2c28aa79c23d737c0fb3381ab2",
+      "exact_native_membership": true,
+      "n_input": 508110,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.2941054408137134,
+          "whole_status": "warning",
+          "n_support": 113130
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.248933843561961,
+          "whole_status": "warning",
+          "n_support": 37363
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0467031249695042,
+          "whole_status": "ok",
+          "n_support": 42101
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3560370334713763,
+          "whole_status": "warning",
+          "n_support": 114756
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "cylinder12",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "b11c2d8cd66c2e2a2de956c5545872f323a21f49f881511aa4bf027734c87546",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.2981457743905997,
+          "whole_status": "warning",
+          "n_support": 113014
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2535548898557354,
+          "whole_status": "warning",
+          "n_support": 37226
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0464908625743414,
+          "whole_status": "ok",
+          "n_support": 41903
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3678982945915907,
+          "whole_status": "warning",
+          "n_support": 114601
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "cylinder20",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "530c4dba8e5b3e27b13251260715ff07eb9e6604755177d45ec63774a10be6c3",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.3083384151776363,
+          "whole_status": "warning",
+          "n_support": 112788
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.231297546552015,
+          "whole_status": "warning",
+          "n_support": 36979
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.0359064573705374,
+          "whole_status": "ok",
+          "n_support": 41546
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3570777776016762,
+          "whole_status": "warning",
+          "n_support": 114300
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "radius_cylinder12",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "39077ff06002919122ed9418f6f3703909ef73cd328cdd04aa1e42e9b889a4f3",
+      "exact_native_membership": true,
+      "n_input": 509707,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.2973953066157364,
+          "whole_status": "warning",
+          "n_support": 113015
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2536385934674679,
+          "whole_status": "warning",
+          "n_support": 37226
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.050412302356781,
+          "whole_status": "ok",
+          "n_support": 41912
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.3678747112837282,
+          "whole_status": "warning",
+          "n_support": 114602
+        }
+      ]
+    },
+    {
+      "room": "M04",
+      "method": "p2p",
+      "result": "passed",
+      "source": "input.pcd",
+      "sha256": "4b19111888115b23d3e8deb70d7deabaed9818db6c60f01b831ad0823d190b5d",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.623813552377344,
+          "whole_status": "warning",
+          "n_support": 113621
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 2.24144933786794,
+          "whole_status": "warning",
+          "n_support": 37055
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 2.6872676789615477,
+          "whole_status": "ok",
+          "n_support": 41850
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.8472949397293188,
+          "whole_status": "warning",
+          "n_support": 114574
+        }
+      ]
+    }
+  ]
+}

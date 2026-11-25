@@ -1,0 +1,75 @@
+{
+  "git_commit": "44642ec4bec73bc524624ff6aa1014869b53a641",
+  "status": "passed",
+  "physical_accuracy_validated": false,
+  "records": [
+    {
+      "source": "M04.pcd",
+      "sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "exact_native_membership": true,
+      "n_input": 510190,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 1.351415697825274,
+          "whole_status": "warning",
+          "n_support": 113162
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.3246423669622178,
+          "whole_status": "warning",
+          "n_support": 37424
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.110511412367615,
+          "whole_status": "ok",
+          "n_support": 42138
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.413805422606993,
+          "whole_status": "warning",
+          "n_support": 114837
+        }
+      ]
+    },
+    {
+      "source": "M26.pcd",
+      "sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "exact_native_membership": true,
+      "n_input": 793393,
+      "n_walls": 4,
+      "structural_status": "ok",
+      "walls": [
+        {
+          "wall": "W01",
+          "whole_rms_mm": 2.4138604785263333,
+          "whole_status": "ok",
+          "n_support": 48915
+        },
+        {
+          "wall": "W02",
+          "whole_rms_mm": 1.2348695860019248,
+          "whole_status": "ok",
+          "n_support": 125467
+        },
+        {
+          "wall": "W03",
+          "whole_rms_mm": 1.1420363966559355,
+          "whole_status": "warning",
+          "n_support": 136039
+        },
+        {
+          "wall": "W04",
+          "whole_rms_mm": 1.0814776959071422,
+          "whole_status": "ok",
+          "n_support": 106065
+        }
+      ]
+    }
+  ]
+}

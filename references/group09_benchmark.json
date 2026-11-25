@@ -1,0 +1,382 @@
+{
+  "version": 1,
+  "combination": 9,
+  "benchmark_date": "2026-11-25",
+  "scope": "Historical method comparison on M26, M04 and controlled scenes",
+  "nominal_score": 86.0,
+  "tolerances": {
+    "strict": {
+      "room_mm": 5,
+      "opening_mm": 5,
+      "corner_mm": 5,
+      "panel_mm": 0.25
+    },
+    "nominal": {
+      "room_mm": 10,
+      "opening_mm": 10,
+      "corner_mm": 10,
+      "panel_mm": 0.5
+    },
+    "relaxed": {
+      "room_mm": 20,
+      "opening_mm": 20,
+      "corner_mm": 20,
+      "panel_mm": 1.0
+    }
+  },
+  "domain_weight_points": 25,
+  "counts": {
+    "room_pass": 6,
+    "room_total": 6,
+    "opening_pass": 3,
+    "opening_total": 5,
+    "extra_field_doors": 0,
+    "extra_field_windows": 0,
+    "synthetic_windows": 24,
+    "predicted_windows": 26,
+    "qualified_windows": 21,
+    "field_walls": 8,
+    "rms_walls": 8
+  },
+  "panel": {
+    "truth_mm": 2.127406314260768,
+    "measured_mm": 2.2457001005955033,
+    "absolute_bias_mm": 0.11829378633473508
+  },
+  "scores": {
+    "strict": 80.83333333333333,
+    "nominal": 86.0,
+    "relaxed": 91.0
+  },
+  "field_items": [
+    {
+      "room": "M26",
+      "kind": "room",
+      "item": "length",
+      "measured_mm": 3651.958139368121,
+      "reference_mm": 3648.0
+    },
+    {
+      "room": "M26",
+      "kind": "room",
+      "item": "width",
+      "measured_mm": 2885.2887231649715,
+      "reference_mm": 2880.0
+    },
+    {
+      "room": "M26",
+      "kind": "room",
+      "item": "height",
+      "measured_mm": 2772.4340197576716,
+      "reference_mm": 2773.0
+    },
+    {
+      "room": "M26",
+      "kind": "opening_face",
+      "item": "door_width",
+      "measured_mm": 898.9494898819535,
+      "reference_mm": 900.0
+    },
+    {
+      "room": "M26",
+      "kind": "opening_face",
+      "item": "door_height",
+      "measured_mm": 2191.6084778546237,
+      "reference_mm": 2180.0
+    },
+    {
+      "room": "M04",
+      "kind": "room",
+      "item": "length",
+      "measured_mm": 3053.9938398637955,
+      "reference_mm": 3050.0
+    },
+    {
+      "room": "M04",
+      "kind": "room",
+      "item": "width",
+      "measured_mm": 2080.76612008957,
+      "reference_mm": 2079.0
+    },
+    {
+      "room": "M04",
+      "kind": "room",
+      "item": "height",
+      "measured_mm": 3087.7446736449983,
+      "reference_mm": 3086.0
+    },
+    {
+      "room": "M04",
+      "kind": "opening_face",
+      "item": "door_width",
+      "measured_mm": 920.2269336782099,
+      "reference_mm": 918.0
+    },
+    {
+      "room": "M04",
+      "kind": "opening_face",
+      "item": "door_height",
+      "measured_mm": 2340.947320658774,
+      "reference_mm": 2316.0
+    },
+    {
+      "room": "M26",
+      "kind": "opening_face",
+      "item": "window_height",
+      "measured_mm": 1738.5502394316215,
+      "reference_mm": 1736
+    }
+  ],
+  "synthetic_cases": [
+    {
+      "case": "blind_patch_613",
+      "true": 0,
+      "predicted": 1,
+      "matched": 0,
+      "max_corner_error_mm": null
+    },
+    {
+      "case": "blind_patch_829",
+      "true": 0,
+      "predicted": 1,
+      "matched": 0,
+      "max_corner_error_mm": null
+    },
+    {
+      "case": "clean_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.31036899725070655
+    },
+    {
+      "case": "clean_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.26443498414975913
+    },
+    {
+      "case": "clean_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.2301041972943616
+    },
+    {
+      "case": "clean_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.16659162727496343
+    },
+    {
+      "case": "clutter_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.19083869913886645
+    },
+    {
+      "case": "clutter_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.2507816525427208
+    },
+    {
+      "case": "clutter_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.22420645696753871
+    },
+    {
+      "case": "clutter_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.12283225998017543
+    },
+    {
+      "case": "flush_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 29.398486249740927
+    },
+    {
+      "case": "flush_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 23.426232037226306
+    },
+    {
+      "case": "flush_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 28.554427802235423
+    },
+    {
+      "case": "flush_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 9.094262153428602
+    },
+    {
+      "case": "partial_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.1424955140158102
+    },
+    {
+      "case": "partial_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.32254048338132607
+    },
+    {
+      "case": "partial_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.0700615449012322
+    },
+    {
+      "case": "partial_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.1421082213346531
+    },
+    {
+      "case": "skew_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.1908386991402283
+    },
+    {
+      "case": "skew_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.25078165254320234
+    },
+    {
+      "case": "skew_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.22420645696806946
+    },
+    {
+      "case": "skew_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.12283225998119666
+    },
+    {
+      "case": "solid_613",
+      "true": 0,
+      "predicted": 0,
+      "matched": 0,
+      "max_corner_error_mm": null
+    },
+    {
+      "case": "solid_829",
+      "true": 0,
+      "predicted": 0,
+      "matched": 0,
+      "max_corner_error_mm": null
+    },
+    {
+      "case": "taper_613",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.4134267470644625
+    },
+    {
+      "case": "taper_733",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.49065846584650175
+    },
+    {
+      "case": "taper_829",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.4659803576873929
+    },
+    {
+      "case": "taper_947",
+      "true": 1,
+      "predicted": 1,
+      "matched": 1,
+      "max_corner_error_mm": 0.2919640912640466
+    }
+  ],
+  "field_wall_rms": [
+    {
+      "room": "M04",
+      "wall": "W01",
+      "rms_mm": 1.3519213142782547
+    },
+    {
+      "room": "M04",
+      "wall": "W02",
+      "rms_mm": 1.3246423669622183
+    },
+    {
+      "room": "M04",
+      "wall": "W03",
+      "rms_mm": 1.1124421153003943
+    },
+    {
+      "room": "M04",
+      "wall": "W04",
+      "rms_mm": 1.4138054226069932
+    },
+    {
+      "room": "M26",
+      "wall": "W01",
+      "rms_mm": 2.431389046780699
+    },
+    {
+      "room": "M26",
+      "wall": "W02",
+      "rms_mm": 1.2358677888919702
+    },
+    {
+      "room": "M26",
+      "wall": "W03",
+      "rms_mm": 1.1420363966559348
+    },
+    {
+      "room": "M26",
+      "wall": "W04",
+      "rms_mm": 1.0811455154389922
+    }
+  ],
+  "input_sha256": {
+    "M26": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+    "M04": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f"
+  },
+  "source_tables_sha256": {
+    "Combination_Scorecard.csv": "089229db6d5dd34071dfdd037450141129732aa84ee2953f2bc5a05de273a495",
+    "field_wall_results.csv": "9c95dab7216b1759780f85f666f30a5bf9e6504529ee42a7070879453559cd4f",
+    "simulated_window_results.csv": "2d90f03bf05718d7777502e158f5df60ac60a46281a64a81cfee3a7da3fde3f9",
+    "field_dimensions_archive.csv": "f13af93c8af09d8ac61daca6fa71dc6bcc611d10f06619384cd545b538b8c544",
+    "panel_control.csv": "552c8e1818f4386c93e73c46a0448c4be6e34adeb0228ae1c60f2dad02ff48e3",
+    "protocol.json": "522b8d6210b229a1c5a866a66ca8766c2ff2cbd1e4a2c66def5be3a4bf315558"
+  }
+}

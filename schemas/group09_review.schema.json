@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent Group 09 radius and reveal review",
+  "type": "object",
+  "required": ["version","combination","method","status","cloud_sha256","raw_selection_sha256","source_sha256","review_source_sha256","edge_adapter_sha256","protocol_sha256","association","benchmark","preprocessing","windows","pairs"],
+  "properties": {
+    "version": {"const": 1}, "combination": {"const": 9}, "method": {"const": "profile_reveal"},
+    "status": {"enum": ["complete","limited","unavailable"]},
+    "reason": {"type":"string"},
+    "cloud_sha256": {"$ref":"#/$defs/sha"}, "raw_selection_sha256": {"$ref":"#/$defs/sha"},
+    "source_sha256": {"$ref":"#/$defs/sha"}, "review_source_sha256": {"$ref":"#/$defs/sha"},
+    "edge_adapter_sha256": {"$ref":"#/$defs/sha"}, "protocol_sha256": {"$ref":"#/$defs/sha"},
+    "preprocessing": {"oneOf":[{"type":"null"},{"allOf":[{"$ref":"preprocessing.schema.json"},{"properties":{"method":{"const":"radius"}}}]}]},
+    "association": {"const":{"min_iou":0.5,"max_center_m":0.35,"max_plane_m":0.12,"max_normal_angle_deg":10}},
+    "benchmark": {"type":"object","required":["benchmark_date","scope","reference_sha256","domain_weight_points","tolerances","counts","panel","scores","nominal_score"],"properties":{"reference_sha256":{"$ref":"#/$defs/sha"}}},
+    "geometry_providers": {"type":"object","required":["walls","corners","openings"]},
+    "floor": {"type":"object","required":["normal","center_m"]},
+    "walls": {"type":"array","items":{"type":"object","required":["id","plane_center_m","plane_normal","boundary_xyz_m"]}},
+    "warnings": {"type":"array","items":{"type":"string"}},
+    "windows": {"type":"array","items":{"$ref":"#/$defs/window"}},
+    "pairs": {"type":"array","items":{"$ref":"#/$defs/pair"}}
+  },
+  "allOf": [
+    {"if":{"properties":{"status":{"const":"unavailable"}}},"then":{"required":["reason"],"properties":{"windows":{"maxItems":0},"pairs":{"maxItems":0}}},"else":{"required":["geometry_providers","floor","walls","warnings"],"properties":{"preprocessing":{"type":"object"}}}}
+  ],
+  "$defs": {
+    "sha":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "id":{"type":"string","pattern":"^[A-Za-z0-9_-]+$"},
+    "pair":{
+      "type":"object","required":["raw_id","review_id","status"],
+      "oneOf":[
+        {"required":["iou","center_gap_mm"],"properties":{"status":{"const":"matched"},"raw_id":{"$ref":"#/$defs/id"},"review_id":{"$ref":"#/$defs/id"},"iou":{"type":"number","minimum":0.5,"maximum":1},"center_gap_mm":{"type":"number","minimum":0,"maximum":350}}},
+        {"properties":{"status":{"const":"raw_only"},"raw_id":{"$ref":"#/$defs/id"},"review_id":{"type":"null"}}},
+        {"properties":{"status":{"const":"review_only"},"raw_id":{"type":"null"},"review_id":{"$ref":"#/$defs/id"}}}
+      ]
+    },
+    "window":{
+      "type":"object","required":["id","wall_id","proposal_corners_xyz_m","wall_normal","status"],
+      "properties":{
+        "id":{"$ref":"#/$defs/id"},"wall_id":{"$ref":"#/$defs/id"},"status":{"enum":["evaluated","missing_wall_boundary"]},
+        "proposal_corners_xyz_m":{"$ref":"window_corner_review.schema.json#/$defs/fourCorners"},
+        "wall_normal":{"type":"array","minItems":3,"maxItems":3,"items":{"type":"number"}},
+        "face":{"$ref":"window_corner_review.schema.json#/$defs/face"},
+        "recessed_width":{"$ref":"window_sections.schema.json#/$defs/deep"},
+        "recessed_four_edges":{"$ref":"window_corner_review.schema.json#/$defs/deep"},
+        "profile_file":{"type":"string","pattern":"^walls/[A-Za-z0-9_-]+/[A-Za-z0-9_-]+_depth_profile[.]csv$"},
+        "profile_sha256":{"$ref":"#/$defs/sha"}
+      },
+      "allOf":[{"if":{"properties":{"status":{"const":"evaluated"}}},"then":{"required":["face","recessed_width","recessed_four_edges","profile_file","profile_sha256"]}}]
+    }
+  }
+}

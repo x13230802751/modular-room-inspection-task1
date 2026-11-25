@@ -1,0 +1,35 @@
+{
+  "methods": [
+    "profile",
+    "profile_xyz",
+    "profile_reveal",
+    "profile_scalelsd",
+    "layer_grid",
+    "layer_xyz",
+    "layer_scalelsd"
+  ],
+  "protocol_sha256": "426aae19b6de083dfaaeeedec98ed275e4ec3c61cd69e91998e06dd946e1d2b8",
+  "source_sha256": {
+    "run.py": "a740de721462a461dd329568456edda04480b704dadc77571082eff0e70eba4d",
+    "evaluate.py": "412aab393b520ebd63302614151eb7e0ce6259059fbbbdbefac9ea2ce30c113b",
+    "geometry.py": "9130e7dd94c8e34e53e53c3fcf6e9ad3e4a4991e31d80591cede9c97ef560d2a",
+    "synthetic.py": "da8551ed09a6fbf54be6206ed01cc3f044e7ffc2f1bea8521558b422b3683b13",
+    "scalelsd_adapter.py": "a9935b6ea20a800b2d9d756d691aec3b9354495ca0110c907dc0146f4c002505"
+  },
+  "python": "3.12.14",
+  "numpy": "2.5.5",
+  "model_source": "e2751fcd0eb82694abeb12ef7ec9d46237e2ca06",
+  "weights_sha256": "d0a7333c4de518a70af7d6ea4a283aa0ce9ffe1047525373b94070b1d1d4003f",
+  "torch": "2.8.0+cu128",
+  "timm": "1.0.15",
+  "opencv": "4.12.0",
+  "device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "author_photo_control": {
+    "raw_lines": 1587,
+    "retained_lines": 575,
+    "junctions": 512,
+    "max_votes": 249.0,
+    "photo_sha256": "bc4f51b35bf03ed435d64142f4b5702b138d86a48b9b30d3020917be55f9182c"
+  }
+}

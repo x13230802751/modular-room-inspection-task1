@@ -1,0 +1,77 @@
+{
+  "distribution": "2026-11-25.6",
+  "measurement_validation_version": "2026-11-25.3",
+  "upstream_default_branch": "main",
+  "upstream_commit": "a7edfe5d75596f72f6b060d7ff19d4e6324376e4",
+  "source_archive": "Room_Inspection_GitHub_Source.zip",
+  "handoff_archive": "Task1_Group09_Handshake.zip",
+  "presentation": {
+    "file": "docs/Task1_Inspection_Presentation.pptx",
+    "sha256": "192302f40a4aa06fceafaa75517767d85d8303ed0cee2d4d654d72017a21c456",
+    "slides": 7,
+    "score_matrix_slide": 6,
+    "method_schematic_slide": 7,
+    "workflow_slide": 3,
+    "format": "HKU Department of Civil Engineering presentation template"
+  },
+  "report_generation": "Report-only replay of the previously validated paired inspections.",
+  "validated_measurement_bundle_sha256": "23025bcb4b1238efafa50718675879838213e503dba69021225c3b8e9e77dfb3",
+  "figures_sha256": {
+    "assets/group09_workflow.png": "5eab67ff28ba890864b71089f0533a3bb6563b6571edb6beee1eb457ba5b4cf4",
+    "assets/group09_workflow.pdf": "1999a9ed43ec9e4b1a69c53b214c0c1fb59f0f3a668f04499a13dfd838b77c01",
+    "assets/group09_workflow.mmd": "8fe513c6592445d5957865999e2b77d2e0d09121863a678fe28183cdb288befe"
+  },
+  "benchmark": {
+    "observations_recomputed": "Verified 70 combinations, 210 tolerance scores, 560 field wall observations and 1960 simulated observations.",
+    "group09_scores": {
+      "strict": 80.83333333333333,
+      "nominal": 86.0,
+      "relaxed": 91.0
+    },
+    "nominal_trace_sha256": "9c1245da21df251b36ba52916bd37e6a9c65d423678c0ecdebb4765bc83bf1af"
+  },
+  "runs": {
+    "M26": {
+      "input_cloud_sha256": "a9b2b0c13d315314e106ecdbbc8e53acb693805dec8c6fb1c641f5a25dd48f91",
+      "point_count": 793393,
+      "identical_saved_assets": 26,
+      "changed_saved_assets": [
+        "report.docx"
+      ],
+      "summary_sha256": "dfdb21ebf6fea55c06e0f2dc1b28de06803e4b0bb4d881c0a98fd282f186ac65",
+      "window_sections_sha256": "6de6a98839a9c221397dbcf22181a25e55813f290abb9af19f982449c835da58",
+      "group09_result_sha256": "e521a18a77ab116bcfcfe9b7ba2accb82f6fed3db1fc224dc5f3ac44e75945a1",
+      "word_sha256": "fab6951cd30887a90e5bdd908a790d0357ca82d32ee7642d01985467a6f9365a",
+      "html_sha256": "8635845159f2edeeff07306c90a4cc2adb7bfb42a42f2261abf7de2d3ca644f2",
+      "word_layout": {
+        "pages": 9,
+        "workflow_page": 8,
+        "score_page": 9,
+        "pages_with_visual_changes_since_the_reviewed_previous_release": [
+          8
+        ]
+      }
+    },
+    "M04": {
+      "input_cloud_sha256": "bbaa83cbd814c20b06c80e87f23c72bc7cbd5f07c57530ff67432dea6444568f",
+      "point_count": 510190,
+      "identical_saved_assets": 24,
+      "changed_saved_assets": [
+        "report.docx"
+      ],
+      "summary_sha256": "0f9657af742ac16f877c30fd3412b4657eeb35329260aa0b355fe4ee518b7b79",
+      "window_sections_sha256": "83089cc80093d1361a1e36b71f72dd83876dcd2fa66d74cf6acb36a47aa1a1cf",
+      "group09_result_sha256": "562100350823632daba86b3bd624138d8f533b79038ccc7ee09f828aa1696e3f",
+      "word_sha256": "9e9db6af62de891c8b6a0315acbffc0977f9f895d8151509f2d591d606077812",
+      "html_sha256": "895be367552491583d3e589c79f6ff75f456dc2cb2d236f14f151e6be382e8e4",
+      "word_layout": {
+        "pages": 7,
+        "workflow_page": 6,
+        "score_page": 7,
+        "pages_with_visual_changes_since_the_reviewed_previous_release": [
+          6
+        ]
+      }
+    }
+  }
+}

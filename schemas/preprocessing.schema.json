@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Input preprocessing for room inspection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["api_version", "method", "parameters", "input_rows", "finite_rows", "retained_rows", "removed_finite_rows", "coordinates", "source_rows_file", "source_rows_sha256"],
+  "properties": {
+    "api_version": {"const": 1},
+    "method": {"enum": ["raw", "radius"]},
+    "parameters": {"type": "object"},
+    "input_rows": {"type": "integer", "minimum": 0},
+    "finite_rows": {"type": "integer", "minimum": 0},
+    "retained_rows": {"type": "integer", "minimum": 0},
+    "removed_finite_rows": {"type": "integer", "minimum": 0},
+    "coordinates": {"const": "original_xyz"},
+    "source_rows_file": {"enum": [null, "detector_source_rows.npz"]},
+    "source_rows_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "if": {"properties":{"method":{"const":"raw"}}},
+  "then": {"properties":{"parameters":{"maxProperties":0},"removed_finite_rows":{"const":0}}},
+  "else": {"properties":{"parameters":{
+    "type":"object","additionalProperties":false,"required":["radius_mm","min_other_points"],
+    "properties":{"radius_mm":{"const":20},"min_other_points":{"const":4}}
+  }}}
+}

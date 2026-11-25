@@ -1,0 +1,27 @@
+{
+  "version": "2026-11-25.1",
+  "input": "Original metre XYZ; the saved production wall, floor and room enclosure are fixed for all methods.",
+  "methods": {
+    "profile": "Production profile detector and its fitted four corners",
+    "layer_grid": "Local implementation of three main height bands, three sub-bands and 20 mm projected bins; metric height-gap classification",
+    "layer_xyz": "Layered proposals with robust strip-wise fits to original XYZ returns",
+    "layer_scalelsd": "Identical layered proposals with four lines from the official ScaleLSD v2 checkpoint",
+    "profile_xyz": "Production window proposals with the same robust XYZ refinement",
+    "profile_scalelsd": "Production window proposals with the same official ScaleLSD lines, for a matched-proposal comparison",
+    "profile_reveal": "Additional candidate after the initial pilot. Fit near-face reveal planes on original points and retain a production edge when evidence is insufficient."
+  },
+  "geometry": {"face_half_band_mm":8, "grid_mm":20, "minimum_width_m":0.5, "minimum_height_m":0.45, "minimum_sill_m":0.18,
+    "line_search_band_mm":110, "strip_count":24, "minimum_supported_strips":12, "minimum_edge_span_fraction":0.52, "maximum_residual_mm":8,
+    "raster_mm":5, "network_input_pixels":[512,512], "network_line_votes_exclusive":10},
+  "truth": "M26 has one inventoried window, manual width 2375 mm with unknown tape depth and height 1736 mm. M04 has no inventoried window. No real surveyed corner coordinates.",
+  "synthetic": {"seeds":[31,47,83,101], "positive_conditions":["clean","skew","partial","clutter"], "negative_conditions":["solid","blind_patch"], "negative_seeds":[31,47],
+    "holdout_seeds":[211,307,419,557],"holdout_positive_conditions":["clean","skew","partial","clutter","flush","taper"],"holdout_negative_seeds":[211,307]},
+  "reveal_fit": {"fit_depth_mm":[8,80],"source_band_mm":65,"bins_along_edge":16,"bins_in_depth":6,"minimum_support_cells":28,
+    "held_out_along_bins":"bin modulo four equals one","inlier_mm":3.5,"minimum_fraction":0.70,"max_face_shift_mm":20,
+    "require_near_depth_mm":25,"require_far_depth_mm":48,"trials":220,"seed":7023},
+  "scoring": {"association":"one-to-one same wall and face-box IoU at least 0.50; real M26 localization uses a frozen production box only as an association proxy",
+    "corner_metric":"mean of the four 3D Euclidean errors with fixed A/B/C/D correspondence followed by the median across matched windows",
+    "dimensions":"horizontal width at the reference middle height and vertical height at reference horizontal center, with estimates in mm",
+    "depth":"shared production step detector. Score signed differences at the documented depth and depth evidence separately from face corners.",
+    "selection":"Consider a corroborating method if it matches the real inventory, achieves at least baseline synthetic recall, reduces paired median corner error, and adds no negative-control false positives. A formal default also needs independent real corner and depth truth."}
+}
