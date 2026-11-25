@@ -142,10 +142,6 @@ def main():
     subprocess.run([binary, "-r", "220", "-singlefile", "-png", str(pdf), str(base)], check=True)
     diagram = mermaid()
     base.with_suffix(".mmd").write_text(diagram, encoding="utf8")
-    guide = ROOT / "docs/INTEGRATED_WORKFLOW.md"
-    before, after = guide.read_text(encoding="utf8").split("```mermaid\n", 1)
-    _, tail = after.split("\n```", 1)
-    guide.write_text(before + "```mermaid\n" + diagram.rstrip() + "\n```" + tail, encoding="utf8")
 
 
 if __name__ == "__main__":

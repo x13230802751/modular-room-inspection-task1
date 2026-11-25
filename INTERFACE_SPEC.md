@@ -20,7 +20,7 @@ The secondary pass uses fixed native wall discovery, enclosure intersections, pr
 
 The official-to-review association is one-to-one in original coordinates. Inward normals must agree within 10 degrees, centre separation must be at most 350 mm, and normal separation at both planes must be at most 120 mm. Projected box IoU must be at least 0.50. The assignment maximizes feasible matches then total IoU. Unmatched candidates appear as `raw_only` or `review_only`. Wall and window IDs belong to their own branches.
 
-The descriptor in `summary.group09_review` binds `group09/result.json` to the source by SHA-256. The branch holds method fingerprints, its own selection, detector row map when needed, floor, wall frames, proposals, side evidence, fitted XYZ corners, face/deep readings, pairing and a historical benchmark snapshot. Status is `complete`, `limited` (incomplete enclosure) or `unavailable` (secondary measurement failed). A complete search may return zero windows. See the [branch schema](schemas/group09_review.schema.json) and [benchmark interpretation](docs/GROUP09_SCORING.md).
+The descriptor in `summary.group09_review` binds `group09/result.json` to the source by SHA-256. The branch holds method fingerprints, its own selection, detector row map when needed, floor, wall frames, proposals, side evidence, fitted XYZ corners, face/deep readings, pairing and a historical benchmark snapshot. Status is `complete`, `limited` (incomplete enclosure) or `unavailable` (secondary measurement failed). A complete search may return zero windows. See the [branch schema](schemas/group09_review.schema.json) and [benchmark interpretation](README.md#offline-method-benchmark).
 
 ## Geometry and providers
 

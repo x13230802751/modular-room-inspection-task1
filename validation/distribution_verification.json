@@ -6,7 +6,8 @@
   "source_archive": "Room_Inspection_GitHub_Source.zip",
   "handoff_archive": "Task1_Group09_Handshake.zip",
   "presentation": {
-    "file": "docs/Task1_Inspection_Presentation.pptx",
+    "archived_filename": "Task1_Inspection_Presentation.pptx",
+    "included_in_current_checkout": false,
     "sha256": "192302f40a4aa06fceafaa75517767d85d8303ed0cee2d4d654d72017a21c456",
     "slides": 7,
     "score_matrix_slide": 6,

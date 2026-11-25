@@ -1,6 +1,6 @@
 # Work transferred with this project
 
-**Integrated edition:** the detailed map below describes the partner project's contributions. Current wall discovery and RMS are replaced by `extensions/native_support.py` and the bundled `native_backend`. See [current source fingerprints](docs/source_map.json) and [current project guide](docs/project_guide.md). Historical course reports are not redistributed in this repository.
+**Integrated edition:** the detailed map below describes the partner project's contributions. Current wall discovery and RMS are replaced by `extensions/native_support.py` and the bundled `native_backend`. See the [current measurement workflow](README.md#measurement-workflow).
 
 Use this map when presenting the work, reviewing an implementation or assigning the next change. It describes software responsibilities. The original commit history and author identities belong to their respective repositories.
 
@@ -12,7 +12,7 @@ Use this map when presenting the work, reviewing an implementation or assigning 
 | Compare edge estimators at a fixed section | Keep the opening and section fixed while fitting reveal planes or a 2D contour. Withhold a result if either side fails its support check. [Comparison driver](research/compare_edges.py) · [Contour fitting](research/contour_fit.py) |
 | Connect detected wall corners to the RMS calculation | Exclude openings, select the whole-wall four-corner footprint, map residuals back to original rows and carry unavailable states through the results. The two pinned backends supply wall discovery and four-point plane fitting. [Adapter](wall_rms.py) · [Upstream revisions and file hashes](upstream.lock.json) |
 | Deliver repeatable reports and interchangeable algorithms | The CLI and local upload page use the same measurement pipeline. A separate writer reads saved geometry and RMS records, exports Word and HTML, and can be replaced without changing detection. [Measurement interfaces](INTERFACE_SPEC.md) · [Report API](REPORT_API.md) |
-| Evaluate and hand over the work | The synthetic demonstration exercises the full pipeline with known window widths and two doors. [Synthetic demonstration](examples/run_demo.py) · [Current integration guide](docs/project_guide.md) |
+| Evaluate and hand over the work | The synthetic demonstration exercises the full pipeline with known window widths and two doors. [Synthetic demonstration](examples/run_demo.py) · [Current integration guide](README.md#measurement-workflow) |
 
 ## Upstream attribution
 

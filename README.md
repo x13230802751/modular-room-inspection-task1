@@ -10,13 +10,13 @@ Upload one room scan to obtain an editable English Word report. The default work
 
 The Word report identifies the input treatment, the numbers of retained and finite points, and the RMS provider. Window widths appear in separate **wall-face aperture** and **recessed frame candidate** columns with depth and elevation.
 
-The comparison page identifies each matched or single-branch window. It gives the face width, width of the recessed candidate, measurement elevation, depth, fitted corners and support status. It distinguishes the five-slice width from the four-line fit at a single depth. The final appendix explains the historical 86/100 method score. [Scoring rules and worked example](docs/GROUP09_SCORING.md)
+The comparison page identifies each matched or single-branch window and gives measurement elevation, depth, fitted corners and support status. It distinguishes the five-slice width from the four-line fit at a single depth. The final appendix explains the [offline method score](#offline-method-benchmark).
 
 ## Read the project or reproduce the score
 
-This is the GitHub source package. Extract it at the root of the target checkout to review and commit the code. The companion `Task1_Group09_Handshake.zip` contains the two saved inspections with their English Word reports. Maintainers can start from the [human handoff](TASK1_HANDOFF.md), [machine-readable manifest](HANDSHAKE.json) or [AI continuation prompt](CONTINUATION_PROMPT.md).
+Clone this repository to run the inspection code. Obtain M04 and M26 from the course distribution to rerun the field measurements. The companion `Task1_Group09_Handshake.zip` contains the two saved inspections and their English Word reports.
 
-The benchmark can be replayed immediately with Python 3.10 or later and the standard library. The following commands work from the root of either extracted package.
+The archived scores can be recalculated with Python 3.10 or later and the standard library. Run these commands from the repository root.
 
 ```shell
 python experiments/joint_benchmark/verify_scores.py --combination 9 --mode nominal
@@ -55,18 +55,31 @@ The CLI accepts PCD, CSV with x, y and z headers, and an archive member such as 
 
 ## Measurement workflow
 
-The [seven-slide HKU Civil Engineering presentation](docs/Task1_Inspection_Presentation.pptx) includes the original wall-point and structural-corner dependencies, all 70 method scores, and an editable schematic of the selected Group 09 window review.
-
 ![A single scan feeds official raw measurements and independent Group 09 window review](assets/group09_workflow.png)
 
-The four measurement interfaces in the upstream GitHub workflow run on the official branch. Group 09 redetects windows independently, and the offline method benchmark supplies the archived scoring appendix. [Interface mapping and editable Mermaid diagram](docs/INTEGRATED_WORKFLOW.md) · [Print-ready PDF](assets/group09_workflow.pdf)
+Efficient RANSAC supplies wall supports. Original point IDs recover the measured XYZ coordinates. The corner module checks the enclosure and ceiling before intersecting planes to locate structural corners. The opening detector fits jambs, heads and sills. The default RMS provider excludes points inside detected opening polygons, selects the remaining wall points inside the four structural corners, and fits a plane with SVD. The whole-wall RMS is the square root of the mean squared perpendicular distance, reported in millimetres. Insufficient enclosure evidence produces an unavailable wall result.
 
-Efficient RANSAC assigns wall supports. The corner module tests the enclosure and ceiling, then intersects their planes. The opening detector fits jambs, heads and sills. The default RMS provider fits a plane to the selected original returns inside the structural corners and outside the detected opening polygons. Insufficient enclosure evidence produces an unavailable whole-wall measurement. Review the reported support, coverage and corner warnings when comparing rooms or reference measurements.
+Group 09 keeps points with at least four other returns within 20 mm and independently redetects the walls and windows. It fits the opening's side planes and intersects them with the wall face to refine edges. A side with insufficient support keeps its profile edge. The recessed candidate uses the median width of five depth slices. [Editable Mermaid source](assets/group09_workflow.mmd)
+
+## Field measurement results
+
+On M04 and M26, the mean absolute error was **2.90 mm** for the six room dimensions and **8.22 mm** for five comparable opening readings (two door widths, two door heights, and the M26 window height). The M26 tape width was 2375 mm at an unrecorded contact depth. The official wall-face width was 2443.84 mm at D = 0, and the recessed candidate was 2378.35 mm across slices centred at D = 655–675 mm. The opening MAE excludes the tape width.
+
+| Reference wall | Computed whole-wall RMS | Manual reference | Signed difference |
+|---|---:|---:|---:|
+| M04 W01 | 1.351416 mm | 1.8 mm | −0.448584 mm |
+| M26 W03 | 1.142036 mm | 1.0 mm | +0.142036 mm |
+
+All eight walls returned a whole-wall RMS. The manual measurement footprints are undocumented, so the table gives differences against the available references. [Course reference registry](references/manual_reference.json) · [Paired-run verification](validation/group09_verification.json)
+
+## Offline method benchmark
+
+The benchmark compares 10 preprocessing treatments × 7 window recognizers. Its four equally weighted components cover room dimensions, opening dimensions, window detection with qualifying corner errors, and wall RMS availability with a known-panel bias check. Group 09 earned **25 + 15 + 21 + 25 = 86.00** under the nominal limits (10 mm geometry and 0.50 mm panel bias), tying Group 58. At the strict limits (5 mm and 0.25 mm), they scored **80.83** and **50.83**, respectively. The score applies to the offline comparison. The default application uses Group 09 for independent window review and bases official measurements on the raw branch. [Scorecard](experiments/joint_benchmark/Combination_Scorecard.csv) · [Group 09 score trace](validation/group09_nominal_score_trace.json)
 
 ## Continue the project
 
 - [Human handoff](TASK1_HANDOFF.md), [machine handoff](HANDSHAKE.json) and [continuation prompt](CONTINUATION_PROMPT.md)
 - [Measurement and preprocessing interfaces](INTERFACE_SPEC.md), [replaceable report and RMS interfaces](REPORT_API.md)
-- [Four verified production runs](validation/preprocessing_verification.json), [course reference registry](references/manual_reference.json) and [original course evaluation](docs/Task1_Evaluation.docx)
+- [Four verified production runs](validation/preprocessing_verification.json)
 - [Ten-treatment experiment and P2P-Bridge diagnosis](experiments/p2p_benchmark/FINDINGS.md), [experimental code and reproduction](experiments/p2p_benchmark/README.md)
-- [Algorithm contributions](CONTRIBUTIONS.md), [native provenance and upstream usage terms](native_backend/PROVENANCE.md), [source map](docs/source_map.json) and [historical integration guide](docs/project_guide.md)
+- [Algorithm contributions](CONTRIBUTIONS.md) and [native provenance and upstream usage terms](native_backend/PROVENANCE.md)
